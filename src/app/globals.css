@@ -1,26 +1,56 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #faf8f5;
+  --foreground: #2c2419;
+  --accent: #8b5a2b;
+  --accent-gold: #c8a26a;
+  --accent-dark: #6b4423;
+  --cream: #f5f0e8;
+  --warm-brown: #5d4e37;
+  --muted: #7d6e5a;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(139, 90, 43, 0.2);
+}
+
+@keyframes coffee-fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.15;
+  }
+}
+
+.animate-coffee-fall {
+  animation: coffee-fall 12s linear infinite;
+}
+
+/* Section container */
+@layer components {
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .container-narrow {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
 }
