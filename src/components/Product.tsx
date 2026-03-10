@@ -64,7 +64,7 @@ export default function Product() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-stretch">
           {/* Cột trái: Ảnh + Giá trị dinh dưỡng */}
           <div className="flex flex-col gap-6 w-full min-w-0">
             <div className="aspect-[5/4] w-full rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white p-4 flex items-center justify-center">
@@ -76,7 +76,7 @@ export default function Product() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
+            <div className="lg:flex-1 lg:min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-x-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-3 uppercase tracking-wider">Giá trị dinh dưỡng và hợp chất sinh học</h4>
               {/* <p className="text-xs text-[#5d4e37]/90 leading-relaxed mb-3">
                 Cà phê chứa nhiều hợp chất sinh học có lợi cho sức khỏe như:
@@ -95,7 +95,7 @@ export default function Product() {
 
           {/* Cột phải: Cách pha + Thông số */}
           <div className="flex flex-col gap-6 w-full min-w-0">
-            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
+            <div className="lg:flex-1 lg:min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-x-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-4 uppercase tracking-wider">Cách pha</h4>
               <ol className="space-y-3 min-w-0 overflow-hidden">
                 {brewSteps.map((step, i) => (
@@ -108,7 +108,7 @@ export default function Product() {
                 ))}
               </ol>
             </div>
-            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
+            <div className="lg:flex-1 lg:min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-x-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-4 uppercase tracking-wider">Thông số</h4>
               <div className="space-y-0 min-w-0 overflow-hidden">
                 {specs.map((s, i) => (
@@ -125,7 +125,7 @@ export default function Product() {
         {/* Sản phẩm Dầu cà phê */}
         <div className="mt-16 pt-12 border-t border-amber-900/10">
           <h2 className="font-serif text-2xl font-semibold text-[#2c2419] mb-8">Dầu cà phê</h2>
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-stretch">
             <div className="flex flex-col gap-6 w-full min-w-0">
               <div className="flex-1 min-h-0 rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white p-6 flex items-center justify-center">
                 <Image
