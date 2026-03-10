@@ -25,7 +25,7 @@ export default function Origin() {
           description="Hạt cà phê được tuyển chọn từ các vùng nguyên liệu nổi tiếng tại Việt Nam"
         />
 
-        <div className="grid sm:grid-cols-2 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 gap-6 mb-6">
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-amber-900/5">
             <Image
               src="/doc-images/image7.jpeg"
@@ -44,6 +44,24 @@ export default function Origin() {
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
+          {[
+            { src: "/doc-images/image6.1.png", alt: "GLOBALG.A.P. - Thực hành nông nghiệp tốt toàn cầu" },
+            { src: "/doc-images/image7.1.png", alt: "VietGAP - Thực hành nông nghiệp tốt Việt Nam" },
+            { src: "/doc-images/image8.1.png", alt: "4C - Common Code for the Coffee Community" },
+          ].map((img, i) => (
+            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md ring-1 ring-amber-900/5 bg-white p-3">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 640px) 50vw, 33vw"
+              />
+            </div>
+          ))}
         </div>
 
         <div className="mb-6 p-6 rounded-xl bg-white border border-amber-900/5">

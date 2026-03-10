@@ -43,31 +43,16 @@ export default function Certifications() {
           ))}
         </div>
 
-        <div className="mb-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white">
+        <div className="mb-12">
+          <div className="relative aspect-[4/3] max-w-2xl mx-auto rounded-xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white">
             <Image
               src="/doc-images/image11.jpeg"
               alt="Cà phê Tây Nguyên - Chứng nhận"
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 50vw, 25vw"
+              sizes="(max-width: 672px) 100vw, 672px"
             />
           </div>
-          {[
-            { src: "/doc-images/image6.1.png", alt: "GLOBALG.A.P. - Thực hành nông nghiệp tốt toàn cầu" },
-            { src: "/doc-images/image7.1.png", alt: "VietGAP - Thực hành nông nghiệp tốt Việt Nam" },
-            { src: "/doc-images/image8.1.png", alt: "4C - Common Code for the Coffee Community" },
-          ].map((img, i) => (
-            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md ring-1 ring-amber-900/5 bg-white p-3">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-contain object-center"
-                sizes="(max-width: 1024px) 50vw, 25vw"
-              />
-            </div>
-          ))}
         </div>
 
         <div className="rounded-xl bg-[#faf8f5] border border-amber-900/5 p-6 lg:p-8">
