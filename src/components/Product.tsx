@@ -67,21 +67,21 @@ export default function Product() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Cột trái: Ảnh + Giá trị dinh dưỡng */}
           <div className="flex flex-col gap-6 w-full min-w-0">
-            <div className="flex-1 min-h-0 rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white p-6 flex items-center justify-center">
+            <div className="aspect-[5/4] w-full rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white p-4 flex items-center justify-center">
               <Image
                 src="/2.jpg"
                 alt="Hộp và gói cà phê sấy lạnh Caffein Lab"
                 width={500}
                 height={400}
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
-            <div className="p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm">
+            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-3 uppercase tracking-wider">Giá trị dinh dưỡng và hợp chất sinh học</h4>
               {/* <p className="text-xs text-[#5d4e37]/90 leading-relaxed mb-3">
                 Cà phê chứa nhiều hợp chất sinh học có lợi cho sức khỏe như:
               </p> */}
-              <ul className="space-y-2 text-xs text-[#5d4e37]/90 mb-3">
+              <ul className="space-y-2 text-xs text-[#5d4e37]/90 mb-3 min-w-0 overflow-hidden">
                 <li>Caffeine giúp tăng sự tỉnh táo</li>
                 <li>Polyphenol và các chất chống oxy hóa</li>
                 <li>Axit chlorogenic có vai trò chống oxy hóa</li>
@@ -95,26 +95,26 @@ export default function Product() {
 
           {/* Cột phải: Cách pha + Thông số */}
           <div className="flex flex-col gap-6 w-full min-w-0">
-            <div className="p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm">
+            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-4 uppercase tracking-wider">Cách pha</h4>
-              <ol className="space-y-3">
+              <ol className="space-y-3 min-w-0 overflow-hidden">
                 {brewSteps.map((step, i) => (
-                  <li key={i} className="flex gap-3 text-sm">
+                  <li key={i} className="flex gap-3 text-sm min-w-0">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#8b5a2b] text-white text-xs flex items-center justify-center font-semibold">
                       {i + 1}
                     </span>
-                    <span className="text-[#5d4e37]/90 pt-0.5">{step}</span>
+                    <span className="text-[#5d4e37]/90 pt-0.5 min-w-0 break-words">{step}</span>
                   </li>
                 ))}
               </ol>
             </div>
-            <div className="p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm">
+            <div className="flex-1 min-h-0 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm flex flex-col overflow-hidden">
               <h4 className="font-semibold text-[#2c2419] text-sm mb-4 uppercase tracking-wider">Thông số</h4>
-              <div className="space-y-0">
+              <div className="space-y-0 min-w-0 overflow-hidden">
                 {specs.map((s, i) => (
-                  <div key={i} className="flex justify-between gap-3 py-2.5 border-b border-amber-900/5 last:border-0 text-sm">
+                  <div key={i} className="flex justify-between gap-3 py-2.5 border-b border-amber-900/5 last:border-0 text-sm min-w-0">
                     <span className="text-[#5d4e37]/80 shrink-0">{s.label}</span>
-                    <span className="font-medium text-[#2c2419] text-right">{s.value}</span>
+                    <span className="font-medium text-[#2c2419] text-right min-w-0 break-words">{s.value}</span>
                   </div>
                 ))}
               </div>

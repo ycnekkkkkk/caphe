@@ -19,7 +19,7 @@ export default function About() {
         />
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
-          <div className="order-2 lg:order-1 flex flex-col min-h-0">
+          <div className="order-2 lg:order-1 flex flex-col min-h-0 h-full">
             <div className="aspect-[4/3] lg:flex-1 lg:min-h-0 rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 relative">
               <Image
                 src="/doc-images/image2.1.jpeg"
@@ -37,8 +37,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 flex flex-col min-h-0 space-y-6">
-            <div>
+          <div className="order-1 lg:order-2 flex flex-col min-h-0 h-full space-y-6">
+            <div className="flex-1 min-h-0">
               <h3 className="font-serif text-lg font-semibold text-[#2c2419] mb-3">1.1 Lịch sử hình thành và phát triển</h3>
               <p className="text-sm text-[#5d4e37]/90 leading-relaxed mb-3">
                 Công ty TNHH Cà Phê Sấy Lạnh Việt Nam được thành lập với mục tiêu phát triển các sản phẩm cà phê chất lượng cao từ nguồn nguyên liệu cà phê Việt Nam. Ngay từ khi thành lập, công ty đã đầu tư vào công nghệ chế biến hiện đại, đặc biệt là công nghệ sấy lạnh (freeze drying) nhằm giữ trọn hương vị tự nhiên và các hợp chất đặc trưng của cà phê.
@@ -51,7 +51,7 @@ export default function About() {
               </p>
             </div>
 
-            <div>
+            <div className="flex-shrink-0">
               <h3 className="font-serif text-lg font-semibold text-[#2c2419] mb-2">1.2 Tầm nhìn</h3>
               <p className="text-sm text-[#5d4e37]/90 leading-relaxed">
                 Trở thành doanh nghiệp uy tín trong lĩnh vực chế biến và cung cấp các sản phẩm từ cà phê chất lượng cao, góp phần nâng cao giá trị và vị thế của ngành cà phê Việt Nam không chỉ thị trường trong nước mà còn cả quốc tế.
