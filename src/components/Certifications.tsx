@@ -9,6 +9,8 @@ const certs = [
 ];
 
 const standards = [
+  "TCVN 6602:2013 – Cà phê nhân – Hướng dẫn bảo quản và vận chuyển",
+  "TCVN 4193:2014 – Cà phê nhân",
   "TCVN 12459:2018 - Cà phê hòa tan nguyên chất",
   "QCVN 8-1:2011/BYT - Giới hạn ô nhiễm độc tố vi nấm",
   "QCVN 8-2:2011/BYT - Giới hạn ô nhiễm kim loại nặng",
@@ -41,15 +43,28 @@ export default function Certifications() {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {["/doc-images/image8.jpeg", "/doc-images/image9.jpeg", "/doc-images/image10.jpeg"].map((src, i) => (
-            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md ring-1 ring-amber-900/5 bg-white">
+        <div className="mb-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white">
+            <Image
+              src="/doc-images/image11.jpeg"
+              alt="Cà phê Tây Nguyên - Chứng nhận"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
+          {[
+            { src: "/doc-images/image6.1.png", alt: "GLOBALG.A.P. - Thực hành nông nghiệp tốt toàn cầu" },
+            { src: "/doc-images/image7.1.png", alt: "VietGAP - Thực hành nông nghiệp tốt Việt Nam" },
+            { src: "/doc-images/image8.1.png", alt: "4C - Common Code for the Coffee Community" },
+          ].map((img, i) => (
+            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md ring-1 ring-amber-900/5 bg-white p-3">
               <Image
-                src={src}
-                alt={`Chứng nhận ${i + 1}`}
+                src={img.src}
+                alt={img.alt}
                 fill
-                className="object-cover object-center"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 50vw, 25vw"
               />
             </div>
           ))}

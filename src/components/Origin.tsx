@@ -37,8 +37,8 @@ export default function Origin() {
           </div>
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-amber-900/5">
             <Image
-              src="/doc-images/image11.jpeg"
-              alt="Cà phê Tây Nguyên"
+              src="/doc-images/22.jpeg"
+              alt="Quả cà phê chín trên cây - Nguồn gốc cà phê"
               fill
               className="object-cover object-center"
               sizes="(max-width: 640px) 100vw, 50vw"

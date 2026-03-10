@@ -22,10 +22,10 @@ export default function About() {
           <div className="order-2 lg:order-1 flex flex-col min-h-0">
             <div className="aspect-[4/3] lg:flex-1 lg:min-h-0 rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 relative">
               <Image
-                src="/doc-images/image2.jpeg"
+                src="/doc-images/image2.1.jpeg"
                 alt="Công ty Cà Phê Sấy Lạnh Việt Nam - Giới thiệu"
                 fill
-                className="object-cover object-center"
+                className="object-contain object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

@@ -1,6 +1,24 @@
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 
+const coffeeOilUses = [
+  "Giàu chất chống oxy hóa giúp bảo vệ tế bào và làm chậm lão hóa.",
+  "Dưỡng ẩm, giúp da mềm mịn và tăng độ đàn hồi. Hỗ trợ nuôi dưỡng tóc, giúp tóc bóng khỏe.",
+  "Mang hương thơm cà phê tự nhiên, có thể dùng trong thực phẩm và mỹ phẩm.",
+];
+
+const coffeeOilTarget = [
+  "Người muốn chăm sóc da và tóc bằng sản phẩm tự nhiên.",
+  "Cá nhân hoặc doanh nghiệp sử dụng trong sản xuất mỹ phẩm, thực phẩm.",
+  "Người yêu thích hương thơm tự nhiên của cà phê.",
+];
+
+const coffeeOilUsage = [
+  { title: "Chăm sóc da", desc: "Thoa một lượng nhỏ lên da và massage nhẹ." },
+  { title: "Dưỡng tóc", desc: "Thoa lên tóc hoặc da đầu, ủ 15–30 phút rồi gội lại." },
+  { title: "Thực phẩm", desc: "Có thể thêm một lượng nhỏ vào sản phẩm thực phẩm để tạo hương." },
+];
+
 const highlights = [
   { icon: "☕", title: "100% cà phê nguyên chất", desc: "Không pha trộn, không chất độn." },
   { icon: "❄️", title: "Công nghệ sấy lạnh", desc: "Freeze drying giữ trọn hương vị tự nhiên." },
@@ -99,6 +117,58 @@ export default function Product() {
                     <span className="font-medium text-[#2c2419] text-right">{s.value}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Sản phẩm Dầu cà phê */}
+        <div className="mt-16 pt-12 border-t border-amber-900/10">
+          <h2 className="font-serif text-2xl font-semibold text-[#2c2419] mb-8">Dầu cà phê</h2>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <div className="flex flex-col gap-6 w-full min-w-0">
+              <div className="flex-1 min-h-0 rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-900/5 bg-white p-6 flex items-center justify-center">
+                <Image
+                  src="/doc-images/image2.3.jpeg"
+                  alt="Dầu cà phê - Cà Phê Sấy Lạnh Việt Nam"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto max-h-full object-contain"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-6 w-full min-w-0">
+              <div className="flex-1 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm min-h-0">
+                <h4 className="font-semibold text-[#2c2419] text-sm mb-3 uppercase tracking-wider">Công dụng</h4>
+                <ul className="space-y-2 text-sm text-[#5d4e37]/90">
+                  {coffeeOilUses.map((item, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-amber-700 mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm min-h-0">
+                <h4 className="font-semibold text-[#2c2419] text-sm mb-3 uppercase tracking-wider">Đối tượng sử dụng</h4>
+                <ul className="space-y-2 text-sm text-[#5d4e37]/90">
+                  {coffeeOilTarget.map((item, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-amber-700 mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 p-5 rounded-xl bg-white border border-amber-900/5 shadow-sm min-h-0">
+                <h4 className="font-semibold text-[#2c2419] text-sm mb-3 uppercase tracking-wider">Cách dùng</h4>
+                <ul className="space-y-3 text-sm text-[#5d4e37]/90">
+                  {coffeeOilUsage.map((item, i) => (
+                    <li key={i}>
+                      <span className="font-medium text-[#2c2419]">{item.title}:</span> {item.desc}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 
 const steps = [
@@ -40,6 +41,23 @@ export default function Process() {
               <p className="text-xs text-[#5d4e37]/80">{step.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12">
+          <h3 className="font-serif text-lg font-semibold text-[#2c2419] mb-6">Cơ sở sản xuất</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {["/doc-images/image8.jpeg", "/doc-images/image9.jpeg", "/doc-images/image10.jpeg"].map((src, i) => (
+              <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md ring-1 ring-amber-900/5 bg-white">
+                <Image
+                  src={src}
+                  alt={`Cơ sở sản xuất ${i + 1}`}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

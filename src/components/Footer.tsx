@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
         <div className="mt-10 pt-6 border-t border-amber-900/30 text-center">
           <p className="text-amber-100/60 text-sm">
-            © {new Date().getFullYear()} Công ty TNHH Cà Phê Sấy Lạnh Việt Nam. Mã số doanh nghiệp: 3601589741
+            © {new Date().getFullYear()} Công ty TNHH Cà Phê Sấy Lạnh Việt Nam. Mã số doanh nghiệp: xxxxxx9741
           </p>
         </div>
       </div>

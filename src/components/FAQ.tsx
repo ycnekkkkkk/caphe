@@ -17,46 +17,70 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
 
   return (
     <section id="faq" className="section-padding bg-white">
-      <div className="container-narrow max-w-3xl">
+      <div className="container-narrow">
         <SectionHeader
           label="FAQ"
           title="Câu hỏi thường gặp"
         />
 
-        <div className="space-y-2">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {faqs.map((faq, i) => (
             <div
               key={i}
               className="rounded-xl bg-[#faf8f5] border border-amber-900/5 overflow-hidden"
             >
               <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                onClick={() => setModalIndex(i)}
                 className="w-full flex items-center justify-between p-4 text-left hover:bg-amber-50/30 transition-colors"
               >
                 <span className="font-medium text-[#2c2419] text-sm pr-4">{faq.q}</span>
-                <span
-                  className={`flex-shrink-0 w-7 h-7 rounded-full bg-[#8b5a2b]/10 flex items-center justify-center transition-transform ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#8b5a2b]/10 flex items-center justify-center">
                   <svg className="w-3.5 h-3.5 text-[#8b5a2b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
               </button>
-              {openIndex === i && (
-                <div className="px-4 pb-4">
-                  <p className="text-[#5d4e37]/90 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              )}
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal overlay */}
+      {modalIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setModalIndex(null)}
+        >
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            aria-hidden="true"
+          />
+          <div
+            className="relative bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setModalIndex(null)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#8b5a2b]/10 flex items-center justify-center hover:bg-[#8b5a2b]/20 transition-colors text-[#8b5a2b]"
+              aria-label="Đóng"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <h3 className="font-semibold text-[#2c2419] text-base mb-4 pr-10">
+              {faqs[modalIndex].q}
+            </h3>
+            <p className="text-[#5d4e37]/90 text-sm leading-relaxed">
+              {faqs[modalIndex].a}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
